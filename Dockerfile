@@ -1,22 +1,22 @@
 FROM node:20-alpine
 
-# Diretório de trabalho dentro do container
 WORKDIR /app
 
-# Copia apenas arquivos de dependências primeiro (melhora cache)
+# Copia dependências
 COPY package*.json ./
 
-# Instala dependências
-RUN npm install
+# Instala dependências exatamente como no package-lock.json
+RUN npm ci --omit=dev
 
-# Copia todo o restante do código
+# Copia o restante do código
 COPY . .
 
-# Gera o build TypeScript → JavaScript
+# Gera o Prisma Client dentro da imagem
+RUN npx prisma generate
+
+# Transpila o TypeScript
 RUN npm run build
 
-# Expõe a porta que o Express vai ouvir dentro do container
 EXPOSE 3000
 
-# Comando que irá iniciar o servidor
 CMD ["npm", "start"]
