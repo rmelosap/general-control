@@ -2,21 +2,21 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-# Copia dependências
+# Copia apenas os arquivos de dependência
 COPY package*.json ./
 
-# Instala dependências exatamente como no package-lock.json
-RUN npm install --omit=dev
+# Instala todas as dependências (incluindo devDependencies)
+RUN npm install
 
 # Copia o restante do código
 COPY . .
 
-# Gera o Prisma Client dentro da imagem
+# Gera o Prisma Client
 RUN npx prisma generate
 
-# Transpila o TypeScript
+# Gera o build do TypeScript
 RUN npm run build
 
 EXPOSE 3000
-# Comentario para forçar um novo build
+
 CMD ["npm", "start"]
