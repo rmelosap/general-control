@@ -1,5 +1,4 @@
--- Ativar extensão para UUID moderno
-CREATE EXTENSION IF NOT EXISTS "pgcrypto";
+-- Removido CREATE EXTENSION para compatibilidade com Northflank
 
 CREATE TABLE "User" (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
