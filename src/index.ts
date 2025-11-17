@@ -32,4 +32,6 @@ app.get("/users", async (req: Request, res: Response) => {
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+
+// Commit em branco, forçando o Northflank
 });
