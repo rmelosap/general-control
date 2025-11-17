@@ -7,7 +7,7 @@
     "build": "tsc",
     "start": "node dist/index.js",
 
-    /* --- SCRIPTS RECOMENDADOS PARA PRISMA --- */
+    
     "prisma:generate": "prisma generate",
     "migrate:deploy": "prisma migrate deploy"
   },
@@ -15,7 +15,7 @@
     "express": "^4.19.2",
     "pg": "^8.11.0",
 
-    /* --- PRISMA CLIENT (necessário em produção) --- */
+    
     "@prisma/client": "^5.15.0"
   },
   "devDependencies": {
@@ -24,7 +24,7 @@
     "@types/node": "^20.12.5",
     "@types/pg": "^8.6.6",
 
-    /* --- PRISMA CLI (dev only) --- */
+    
     "prisma": "^5.15.0"
   }
 }
