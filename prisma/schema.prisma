@@ -1,0 +1,42 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                String   @id @default(uuid())
+  pst_grd           String   @db.VarChar(2)
+  pst_grd_completo  String   @db.VarChar(5)
+
+  quadro            String   @db.Text
+  especialidade     String   @db.Text
+  funcao            String   @db.Text
+  operacionalidade  String   @db.Text
+  dependente        String   @db.Text
+
+  genero            String   @db.Text
+
+  email_funcional   String   @db.Text
+  email_particular  String   @db.Text
+
+  trigrama          String   @db.VarChar(3)
+
+  nome_de_guerra    String   @db.Text
+  nome_completo     String   @db.Text
+
+  saram             String   @db.VarChar(7)
+  cpf               String   @db.VarChar(14)
+
+  banco             String   @db.VarChar(3)
+  agencia           String   @db.VarChar(10)
+  conta_corrente    String   @db.Text
+
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
