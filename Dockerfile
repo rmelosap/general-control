@@ -18,5 +18,5 @@ RUN npx prisma generate
 RUN npm run build
 
 EXPOSE 3000
-
+# Comentario para forçar um novo build
 CMD ["npm", "start"]
