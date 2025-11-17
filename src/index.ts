@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000;
 
 // Conexão com PostgreSQL
 const db = new Pool({
-  connectionString: process.env.POSTGRES_URL, // copiar exatamente igual ao nome da env
+  connectionString: process.env.POSTGRES_URI, // copiar exatamente igual ao nome da env
 });
 
 // Testar conexão ao iniciar
