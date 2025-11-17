@@ -1,7 +1,8 @@
--- Removido CREATE EXTENSION para compatibilidade com Northflank
+-- Migration ajustada para remover dependência do pgcrypto
+-- UUID será gerado pelo Prisma (uuid()), não pelo PostgreSQL
 
 CREATE TABLE "User" (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  id UUID PRIMARY KEY,
 
   pst_grd           VARCHAR(2)   NOT NULL,
   pst_grd_completo  VARCHAR(5)   NOT NULL,
