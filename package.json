@@ -5,16 +5,26 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+
+    /* --- SCRIPTS RECOMENDADOS PARA PRISMA --- */
+    "prisma:generate": "prisma generate",
+    "migrate:deploy": "prisma migrate deploy"
   },
   "dependencies": {
     "express": "^4.19.2",
-    "pg": "^8.11.0"
+    "pg": "^8.11.0",
+
+    /* --- PRISMA CLIENT (necessário em produção) --- */
+    "@prisma/client": "^5.15.0"
   },
   "devDependencies": {
     "typescript": "^5.3.0",
     "@types/express": "^4.17.21",
     "@types/node": "^20.12.5",
-    "@types/pg": "^8.6.6"
+    "@types/pg": "^8.6.6",
+
+    /* --- PRISMA CLI (dev only) --- */
+    "prisma": "^5.15.0"
   }
 }
